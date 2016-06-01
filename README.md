@@ -1,0 +1,1 @@
+# simulator-output-capabilities-catalog
