@@ -1,0 +1,322 @@
+###############################################################################
+# supported-species
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   Any NCBI Taxon ID (e.g. 9606 is humans)
+#
+supported-species=9606
+
+###############################################################################
+# supported-things
+###############################################################################
+#
+# Description: Currently not well thought out, ignore for now.
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   any string
+#
+#supported-things=
+
+###############################################################################
+# supported-temporal-granularities
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   year
+#   month
+#   day
+#   hour
+#   minute
+#   second
+#   millisecond
+#
+supported-temporal-granularities=day
+
+###############################################################################
+# supported-spatial-granularities
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   none
+#   admin1
+#   admin2
+#   admin3
+#   admin4
+#   admin5
+#   latLong
+#
+supported-spatial-granularities=admin3
+
+###############################################################################
+# supported-place-types
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   preschool
+#   primarySchool
+#   secondarySchool
+#   allSchools
+#   allSchoolsOfOneLevelInOneTract
+#   workplace
+#   nzaraCottonFactory
+#   home
+#
+#supported-place-types=
+
+###############################################################################
+# supported-infection-states
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   susceptible
+#   greaterThanOrEqualToId50Exposure
+#   latent
+#   infectious
+#   recovered
+#   immuneAndActsLikeImmune
+#   immuneButActsLikeNotImmune
+#   newly_sick
+#
+#supported-infection-states=
+
+###############################################################################
+# supported-infection-state-transitions
+###############################################################################
+#
+# Description: Not used.
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#
+# Notes:
+#    InfectionStateTransitionEnumValue=prior:InfectionStateEnum;new:InfectionStateEnum) e.g. (???=prior:susceptible;new:latent)
+#supported-infection-state-transitions=
+
+###############################################################################
+# supported-disease-outcomes
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   asymptomatic
+#   symptomatic
+#   severely symptomatic
+#   fulminant
+#   hospitalization
+#   death
+#   recovery
+#
+#supported-disease-outcomes=
+
+###############################################################################
+# supported-disease-outcome-transition
+###############################################################################
+#
+# Description: Not used.
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#
+#
+#supported-disease-outcome-transition=
+
+###############################################################################
+# supported-healthcare-facility-types
+###############################################################################
+#
+# Description: Not used.
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#
+#
+# Note: The Enum isn't populated in the XSD.
+#
+#supported-healthcare-facility-types=
+
+###############################################################################
+# supported-marital-status-types
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   marriedSpousePresent
+#   marriedSpouseAbsent
+#   divorced
+#   separated
+#   widowed
+#   neverMarried
+#
+#supported-marital-status-types=
+
+###############################################################################
+# supported-schooling-status-types
+###############################################################################
+#
+# Description:
+#
+#
+# Possible values:
+#   currentlyEnrolledInSchool
+#   previouslyEnrolledInSchool
+#   neverEnrolledInSchool
+#
+#supported-schooling-status-types=
+
+###############################################################################
+# supported-disability-status-types
+###############################################################################
+#
+# Description:
+#
+#
+# Possible values:
+#   disabled
+#   notDisabled
+#
+#supported-disability-status-types=
+
+###############################################################################
+# supported-employment-status
+###############################################################################
+#
+# Description:
+#
+#
+# Usage: enter either one or more supported values, if using more than one
+#        value, separate values by a comma
+#
+#
+# Possible values:
+#   armedForces
+#   inLaborForceEmployedAtWork
+#   inLaborForceEmployedNotAtWorkLastWeek
+#   inLaborForceUnemployedExperiencedWorker
+#   notInLaborForceHouseworker
+#   notInLaborForceUnableToWork
+#   notInLaborForceSchool
+#   notInLaborForceOther
+#   notInLaborForceUnpaidLessThan15Hours
+#
+#supported-employment-status-types=
+
+###############################################################################
+# supported-locations
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   Any ApolloLocationCode
+#
+#supported-locations=
+
+###############################################################################
+# supported-age-range-category-definition
+###############################################################################
+#
+# Description:
+#
+#
+# Usage:
+#
+#
+# Possible values:
+#   TYPE_1 (yearly)
+#   (people must be at least as old as the start year (inclusive), and must be younger than the end year (exclusive))
+#       0-0.5 years
+#       1-2 years
+#       2-3 years
+#       ...
+#       99+ years
+#
+#   TYPE_2 (yearly deciles)
+#       0-10
+#       10-20
+#       ...
+#       90+
+#
+#   COMPLETE_(supported unit of time enums)
+#   For example: COMPLETE_YEAR_MONTH means that the simulator supports the full AgeRangeCategoryDefinition, and can
+#              support bounds at only the YEAR and MONTH level.  If a simulator truly supported every unit of time
+#              for the bounds the value would be COMPLETE_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MILLISECOND
+#
+#
+supported-age-range-category-definition=TYPE_1
+
+
+
+###############################################################################
+# development notes
+###############################################################################
+#
+# Measured quantity range ideas:
+#
+# There are too many combinations to declare.  Lets just make some aliases like:
+#       HOUSEHOLD_MEDIAN_INCOME which would take:
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_1_LOWER_BOUND=NEGATIVE_INFINITY
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_1_UPPER_BOUND=20000
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_2_LOWER_BOUND=20000
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_2_UPPER_BOUND=60000
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_3_LOWER_BOUND=60000
+#       HOUSEHOLD_MEDIAN_INCOME_RANGE_3_UPPER_BOUND=POSITIVE_INFINITY
+#
+#
